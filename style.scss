@@ -1,0 +1,237 @@
+@import "variables";
+
+*{
+    margin: 0;
+}
+
+
+body{
+    font-family: $fontFamily;
+    background-color: $bgColor;
+    color: $fontColor;
+    font-size: $fontSize;
+}
+
+/* HEADER */
+
+header{
+    background-color: $navBgColor;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    img{
+        width: 100px;
+    }
+    nav{
+        display: flex;
+        align-items: center;
+        ul{
+            list-style-type: none;
+            li{
+                display: inline-block;
+                margin-left: 1rem;
+                a{
+                    color: $fontColor;
+                    text-decoration: none;
+                    
+                    &:hover{    //  ampersand refers to parent
+                        text-decoration: underline;
+                        text-underline-offset: 1rem;
+                    }
+
+                }
+
+               
+            }
+        }
+    }
+}
+
+/* BANNER */
+
+main{
+    .banner{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $bannerBgColor;
+        padding: .5rem 2rem;
+        line-height: 2rem;
+    }
+    article{
+        width: 50%;
+        margin: .5rem;
+    }
+
+    button{
+        padding: 0.5rem;
+        background-color: $navBgColor;
+        border: none;
+        border-radius: 10px;
+        font-size: $myLinkSize;
+        width: 9rem;
+        margin: .5rem .5rem .5rem 0;
+
+        &:hover{
+            background-color: $bgColor;
+            cursor: pointer;
+        }
+    }
+
+    img{
+        width: 400px;
+        margin: .5rem;
+    }
+}
+
+/* CARD */
+
+@mixin myBox($bgColor,$fontColor) {
+   
+    background-color: $bgColor;
+    color: $fontColor;
+    width: 25%;
+    height: 15rem;
+    border: $myBorder;
+    border-radius: 5px;
+    margin: .5rem;
+ 
+}
+
+
+.cards{
+    display: flex;
+    padding: .5rem 2rem;
+    .card1{
+        @include myBox(orangered,$fontColor);
+        display:grid;
+        place-items: center;
+    }
+    .card2{
+        @extend .card1;
+        @include myBox(orange,$fontColor);
+       
+    }
+    .card3{
+        @include myBox(yellowgreen,$fontColor);
+        @extend .card1;
+    }
+    .card4{
+        @include myBox(lightblue,$fontColor);
+        @extend .card1;
+    }
+}
+
+
+/* ARTICLES */
+
+.articles{
+    display: flex;
+    padding: .5rem 2rem;
+    .article1{
+        width: 50%;
+        background-color: gray;
+        border: 1px solid black;
+        border-radius: 10px;
+        height: 10rem;
+        margin: .5rem;
+        display:grid;
+        place-items: center;
+    }
+
+    .article2{
+        @extend .article1;
+    }
+}
+
+/* FOOTER */
+
+$textColor:white, green, blue, red , black;
+
+$dark: 1;
+
+footer {
+  @if $dark==3 {
+    background-color: white;
+    color: black;
+  } @else if $dark==2 {
+    background-color: gray;
+  } @else {
+    background-color: lightgreen;
+  }
+}
+
+footer{
+    padding: .5rem 2rem;
+    background-color: lightgreen;
+    p{
+        color: #30a7c3;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .socials{
+        display: flex;
+        height: 100px;
+        @for $i from 1 to 6 {
+            .social#{$i}{
+                width: 20%;
+                height: 100%;
+                background-color: lighten(#e4ec0a, $i*5);
+                display:grid;
+                place-items: center;
+                color: nth($textColor,$i);
+                border: 1px solid black;
+            }
+        }
+    }
+}
+
+
+/* MEDIA */
+
+@media (max-width: 820px){
+    header{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        nav{
+            display: block;
+            ul{
+                padding-left: 0;
+                li{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .banner{
+        flex-direction: column-reverse;
+        article{
+            width: 90%;
+            margin: .5rem;
+        }
+        img{
+            width: 200px;
+        }
+        
+    }
+
+    .cards{
+        flex-wrap: wrap;
+        justify-content: center;
+        .card1, .card2, .card3, .card4{
+            width: 45%;
+        }
+        
+    }
+}
+
+@media (max-width: 480px){
+    .cards{
+        .card1, .card2, .card3, .card4{
+            width: 90%;
+        }   
+    }
+    
+}

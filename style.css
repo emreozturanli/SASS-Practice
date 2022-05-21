@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: pink;
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* HEADER */
+header {
+  background-color: #30a7c3;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+}
+header img {
+  width: 100px;
+}
+header nav {
+  display: flex;
+  align-items: center;
+}
+header nav ul {
+  list-style-type: none;
+}
+header nav ul li {
+  display: inline-block;
+  margin-left: 1rem;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+header nav ul li a:hover {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+}
+
+/* BANNER */
+main .banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #cc6699;
+  padding: 0.5rem 2rem;
+  line-height: 2rem;
+}
+main article {
+  width: 50%;
+  margin: 0.5rem;
+}
+main button {
+  padding: 0.5rem;
+  background-color: #30a7c3;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  width: 9rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+}
+main button:hover {
+  background-color: pink;
+  cursor: pointer;
+}
+main img {
+  width: 400px;
+  margin: 0.5rem;
+}
+
+/* CARD */
+.cards {
+  display: flex;
+  padding: 0.5rem 2rem;
+}
+.cards .card1, .cards .card4, .cards .card3, .cards .card2 {
+  background-color: orangered;
+  color: white;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+  display: grid;
+  place-items: center;
+}
+.cards .card2 {
+  background-color: orange;
+  color: white;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+.cards .card3 {
+  background-color: yellowgreen;
+  color: white;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+.cards .card4 {
+  background-color: lightblue;
+  color: white;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+/* ARTICLES */
+.articles {
+  display: flex;
+  padding: 0.5rem 2rem;
+}
+.articles .article1, .articles .article2 {
+  width: 50%;
+  background-color: gray;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 10rem;
+  margin: 0.5rem;
+  display: grid;
+  place-items: center;
+}
+/* FOOTER */
+footer {
+  background-color: lightgreen;
+}
+
+footer {
+  padding: 0.5rem 2rem;
+  background-color: lightgreen;
+}
+footer p {
+  color: #30a7c3;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+footer .socials {
+  display: flex;
+  height: 100px;
+}
+footer .socials .social1 {
+  width: 20%;
+  height: 100%;
+  background-color: #eef51a;
+  display: grid;
+  place-items: center;
+  color: white;
+  border: 1px solid black;
+}
+footer .socials .social2 {
+  width: 20%;
+  height: 100%;
+  background-color: #eff633;
+  display: grid;
+  place-items: center;
+  color: green;
+  border: 1px solid black;
+}
+footer .socials .social3 {
+  width: 20%;
+  height: 100%;
+  background-color: #f1f74b;
+  display: grid;
+  place-items: center;
+  color: blue;
+  border: 1px solid black;
+}
+footer .socials .social4 {
+  width: 20%;
+  height: 100%;
+  background-color: #f3f864;
+  display: grid;
+  place-items: center;
+  color: red;
+  border: 1px solid black;
+}
+footer .socials .social5 {
+  width: 20%;
+  height: 100%;
+  background-color: #f5f97c;
+  display: grid;
+  place-items: center;
+  color: black;
+  border: 1px solid black;
+}
+
+/* MEDIA */
+@media (max-width: 820px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  header nav {
+    display: block;
+  }
+  header nav ul {
+    padding-left: 0;
+  }
+  header nav ul li {
+    margin-left: 0;
+  }
+
+  .banner {
+    flex-direction: column-reverse;
+  }
+  .banner article {
+    width: 90%;
+    margin: 0.5rem;
+  }
+  .banner img {
+    width: 200px;
+  }
+
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cards .card1, .cards .card2, .cards .card3, .cards .card4 {
+    width: 45%;
+  }
+}
+@media (max-width: 480px) {
+  .cards .card1, .cards .card2, .cards .card3, .cards .card4 {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
